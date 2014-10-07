@@ -55,6 +55,7 @@ angular.module('myApp',[])
 			if($scope.myForm.$valid) {
 				$scope.mealCount += 1;
 				$scope.tipTotal += $scope.tip;
+				$scope.basePrice = 0;
 			}
 		};
 
