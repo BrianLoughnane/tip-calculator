@@ -1,0 +1,115 @@
+body {
+	margin: 0px;
+}
+
+h1 {
+	text-align: center;
+	font-size: 60px;
+	margin: 0%;
+	padding: 1%;
+}
+
+h2 {
+	border-bottom: 1px solid black;
+	margin: 0px;
+	text-align: left;
+	padding: 15px;
+	font-size: 2.4em;
+}
+
+h1, h2 {
+	font-weight: normal;
+}
+
+input {
+	padding: 3%;
+}
+
+div span {
+	font-size: 1.2em;
+}
+
+.left {
+	width: 40%;
+	float: left;
+	border: 1px solid black;
+	margin-left: 10%;
+}
+
+.right {
+	width: 30%;
+	float: left;
+	margin-left: 7%;
+
+}
+
+.right>div {
+	border: 1px solid black;
+}
+
+.right>div:nth-child(2) {
+	margin-top: 50px;
+}
+
+.reset {
+	float: right;
+	margin-right: 2%;
+	clear: both;
+}
+
+.button {
+	border: 1px solid black;
+	padding: 5px 21px;
+	box-shadow: 3px 3px;
+	position: relative;
+}
+
+.button:hover {
+	cursor: pointer;
+}
+
+.button:active {
+	top: 2px;
+	left: 2px;
+	box-shadow: 1px 1px;
+}
+
+.mealDetailsButtons {
+	text-align: center;
+	padding: 10% 0%;
+	margin-top: 14%;
+}
+
+.mealDetailsButtons .button {
+	margin: 5px;
+	display: inline-block;
+}
+
+.innerMargin {
+	width: 50%;
+	margin: 5px;
+}
+
+.innerMargin>div:nth-child(2) {
+	border-bottom: 1px solid black;
+}
+
+.detailsLeft, .detailsRight {
+	display: inline-block;
+	margin: 0px;
+}
+
+.detailsLeft {
+	text-align: right;
+	width: 40%;
+	padding: 3%;
+}
+
+.detailsRight {
+	width: 43%;
+	text-align: center;
+}
+
+.myEarnings .detailsLeft {
+	width: 50%;
+}
