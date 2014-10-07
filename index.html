@@ -13,13 +13,17 @@
 	<div class="container">
 		<div class="left">
 			<h2>Enter the Meal Details</h2>
-			<div><span class="detailsLeft">Base Meal Price: </span> <span class="detailsRight"> $ <input type="number" ng-model="basePrice"></span></div>
-			<div><span class="detailsLeft">Tax Rate:</span><span class="detailsRight"> % <input type="number" ng-model="taxRate"></span></div>
-			<div><span class="detailsLeft">Tip Percentage:</span><span class="detailsRight"> % <input type="number" ng-model="tipRate"></span></div>
-			<div class="mealDetailsButtons">
-				<span class="button">Submit</span>
-				<span class="button">Cancel</span>
-			</div>
+
+			<form name='myForm' novalidate>
+				<div><span class="detailsLeft">Base Meal Price: </span> <span class="detailsRight"> $ <input required type="number" ng-model="basePrice"></span></div>
+				<div><span class="detailsLeft">Tax Rate:</span><span class="detailsRight"> % <input required type="number" ng-model="taxRate"></span></div>
+				<div><span class="detailsLeft">Tip Percentage:</span><span class="detailsRight"> % <input required type="number" ng-model="tipRate"></span></div>
+				<div class="mealDetailsButtons">
+					<span class="button" ng-click="submit()">Submit</span>
+					<span class="button" ng-click="cancel()">Cancel</span>
+				</div>
+			</form>
+		
 		</div>
 		<div class="right">
 			<div>
@@ -32,12 +36,12 @@
 			</div>
 			<div class="myEarnings">
 				<h2>My Earnings Info</h2>
-				<div><span class='detailsLeft'>Tip Total: </span><span class='detailsRight'>{{myEarnings.tipTotal | currency }}</span></div>
-				<div><span class='detailsLeft'>Meal Count: </span><span class='detailsRight'>{{ myEarnings.mealCount }}</span></div>
+				<div><span class='detailsLeft'>Tip Total: </span><span class='detailsRight'>{{ tipTotal | currency }}</span></div>
+				<div><span class='detailsLeft'>Meal Count: </span><span class='detailsRight'>{{ mealCount }}</span></div>
 				<div><span class='detailsLeft'>Average Tip Per Meal: </span><span class='detailsRight'>{{ averageTip | currency }}</span></div>
 			</div>
 		</div>
-		<span class='reset button'>Reset</span>
+		<span class='reset button' ng-click="reset()">Reset</span>
 	</div>
 </body>
 </html>
