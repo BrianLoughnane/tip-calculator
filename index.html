@@ -15,13 +15,14 @@
 			<h2>Enter the Meal Details</h2>
 
 			<form name='myForm' ng-submit="submit()" novalidate>
-				<div><span class="detailsLeft">Base Meal Price: </span> <span class="detailsRight"> $ <input required type="number" ng-model="basePrice"></span></div>
+				<div><span class="detailsLeft">Base Meal Price: </span> <span class="detailsRight"> $ <input required type="number" min='1' ng-model="basePrice"></span></div>
 				<div><span class="detailsLeft">Tax Rate:</span><span class="detailsRight"> % <input required type="number" ng-model="taxRate"></span></div>
 				<div><span class="detailsLeft">Tip Percentage:</span><span class="detailsRight"> % <input required type="number" ng-model="tipRate"></span></div>
 				<div class="mealDetailsButtons">
 					<input class="button" type="submit" value="Submit">
-					<!-- <span class="button" ng-click="submit()">Submit</span> -->
 					<span class="button" ng-click="cancel()">Cancel</span>
+					<!-- <button class="button" ng-click="cancel()">Cancel</button> -->
+					<!-- <span class="button" ng-click="submit()">Submit</span> -->
 				</div>
 			</form>
 		
