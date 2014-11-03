@@ -1,0 +1,36 @@
+<div class="left">
+	<h2>Enter the Meal Details</h2>
+
+	<form name='myForm' ng-submit="submit()" novalidate>
+		<div><span class="detailsLeft">Base Meal Price: </span> <span class="detailsRight"> $ <input required type="number" min='1' ng-model="basePrice"></span></div>
+		<div><span class="detailsLeft">Tax Rate:</span><span class="detailsRight"> % <input required type="number" ng-model="taxRate"></span></div>
+		<div><span class="detailsLeft">Tip Percentage:</span><span class="detailsRight"> % <input required type="number" ng-model="tipRate"></span></div>
+		<div class="mealDetailsButtons">
+			<!-- <a href="#/my-earnings"> -->
+				<input class="button" type="submit" value="Submit">
+			<!-- </a> -->
+			
+			<span class="button" ng-click="cancel()">Cancel</span>
+		</div>
+	</form>
+	
+	<div>
+		<h2>Customer Charges</h2>
+		<div class="innerMargin">
+			<div><span class='detailsLeft'>Subtotal</span><span class="detailsRight">{{ subtotal | currency }}</span></div>
+			<div><span class='detailsLeft'>Tip</span><span class="detailsRight">{{ tip | currency }}</span></div>
+			<div><span class='detailsLeft'>Total</span><span class='detailsRight'>{{ total | currency }}</span></div>
+		</div>
+	</div>
+
+</div>
+<div class="right">
+	
+	<div class="myEarnings">
+		<h2>My Earnings Info</h2>
+		<div><span class='detailsLeft'>Tip Total: </span><span class='detailsRight'>{{ tipTotal | currency }}</span></div>
+		<div><span class='detailsLeft'>Meal Count: </span><span class='detailsRight'>{{ mealCount }}</span></div>
+		<div><span class='detailsLeft'>Average Tip Per Meal: </span><span class='detailsRight'>{{ averageTip | currency }}</span></div>
+	</div>
+</div>
+<span class='reset button' ng-click="reset()">Reset</span>

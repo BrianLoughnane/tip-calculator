@@ -9,6 +9,11 @@ h1 {
 	padding: 1%;
 }
 
+nav {
+	text-align: center;
+	font-size: 1.6em;
+}
+
 h2 {
 	border-bottom: 1px solid black;
 	margin: 0px;
@@ -29,17 +34,28 @@ div span {
 	font-size: 1.2em;
 }
 
+.container {
+	padding-top: 20px;
+}
+
+.explanation {
+	width: 55%;
+	margin: auto;
+	font-size: 1.2em;
+}
+
 .left {
 	width: 40%;
-	float: left;
+	margin: auto;
 	border: 1px solid black;
-	margin-left: 10%;
+	/*margin-left: 10%;*/
 }
 
 .right {
 	width: 30%;
-	float: left;
-	margin-left: 7%;
+	margin: auto;
+	/*float: left;*/
+	/*margin-left: 7%;*/
 
 }
 
@@ -52,9 +68,9 @@ div span {
 }
 
 .reset {
-	float: right;
-	margin-right: 2%;
-	clear: both;
+	display: inline-block;
+	left: 45%;
+	top: 20px;
 }
 
 .button {

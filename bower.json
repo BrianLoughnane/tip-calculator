@@ -1,0 +1,20 @@
+{
+  "name": "tip-calculator",
+  "version": "0.0.0",
+  "homepage": "https://github.com/BrianLoughnane/tip-calculator",
+  "authors": [
+    "BrianLoughnane <BrianJLoughnane@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.1",
+    "angular-route": "~1.3.1"
+  }
+}
