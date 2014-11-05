@@ -44,19 +44,11 @@ div span {
 	font-size: 1.2em;
 }
 
-.left {
+.left, .right	 {
 	width: 40%;
 	margin: auto;
 	border: 1px solid black;
 	/*margin-left: 10%;*/
-}
-
-.right {
-	width: 30%;
-	margin: auto;
-	/*float: left;*/
-	/*margin-left: 7%;*/
-
 }
 
 .right>div {
@@ -85,16 +77,10 @@ div span {
 	cursor: pointer;
 }
 
-.button:active {
-	top: 2px;
-	left: 2px;
-	box-shadow: 1px 1px;
-}
-
 .mealDetailsButtons {
 	text-align: center;
 	padding: 10% 0%;
-	margin-top: 14%;
+	/*margin-top: 14%;*/
 }
 
 .mealDetailsButtons .button {
