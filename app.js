@@ -36,6 +36,7 @@ angular.module('myApp',['ngRoute'])
 		$rootScope.mealCount = 0;
 		$rootScope.averageTip = 0;
 
+
 		// $rootScope.$watch('tipTotal', function() {
 		// 	$rootScope.averageTip = $rootScope.tipTotal / $rootScope.mealCount;
 		// 	if(isNaN($rootScope.averageTip)) {
@@ -44,18 +45,6 @@ angular.module('myApp',['ngRoute'])
 		// })
 
 	})
-	.controller('MyEarningsCtrl', function($scope, $rootScope, averageTip) {
-
-		$scope.reset = function() {
-			$rootScope.tipTotal = 0;
-			$rootScope.mealCount = 0;
-			$rootScope.averageTip = 0;
-		}
-
-		$rootScope.averageTip = averageTip;
-
-	})
-	// .controller('MyCtrl', function($scope, tipTotal) {
 	.controller('NewMealCtrl', function($scope, $rootScope, $location) {
 		$scope.basePrice = 0;
 		$scope.taxRate = 0;
@@ -98,8 +87,32 @@ angular.module('myApp',['ngRoute'])
 				$rootScope.mealCount += 1;
 				$rootScope.tipTotal += $scope.tip;
 				$rootScope.basePrice = 0;
+
+				$scope.banjo = 'twang';
+
+				
 				$location.url('/my-earnings');
+
+				$rootScope.$broadcast('submit', $scope.banjo);
 			}
 		};
+
+	})
+	.controller('MyEarningsCtrl', function($scope, $rootScope, averageTip) {
+
+		$scope.reset = function() {
+			$rootScope.tipTotal = 0;
+			$rootScope.mealCount = 0;
+			$rootScope.averageTip = 0;
+		}
+
+		$scope.$on('submit', function(banjo) {
+			$scope.banjo = banjo;
+			console.log('on submit listener fired');
+			console.log($scope.banjo);
+
+		});
+		
+		$rootScope.averageTip = averageTip;
 
 	});
