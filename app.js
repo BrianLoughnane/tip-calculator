@@ -10,21 +10,19 @@ angular.module('myApp',['ngRoute'])
 			})
 			.when('/my-earnings', {
 				templateUrl: 'my-earnings.html',
-				controller: 'MyEarningsCtrl',
-				resolve: {
-					averageTip: function($rootScope) {
-						 // var bogus = 3;
-						 // return bogus;
-						$rootScope.averageTip = $rootScope.tipTotal / $rootScope.mealCount;
-						if(isNaN($rootScope.averageTip)) {
-							$rootScope.averageTip = 0;
-						}
+				controller: 'MyEarningsCtrl'
+				// ,
+				// resolve: {
+				// 	averageTip: function($rootScope) {
+				// 		$rootScope.averageTip = $rootScope.tipTotal / $rootScope.mealCount;
 						
-						return $rootScope.averageTip; 
-					}
-					// mealCount: 4,
-					// averageTip: 3,
-				}
+				// 		if(isNaN($rootScope.averageTip)) {
+				// 			$rootScope.averageTip = 0;
+				// 		}
+						
+				// 		return $rootScope.averageTip; 
+				// 	} 
+				// }
 			})
 			.otherwise({
 				template: '<p>Sorry, page not found!</p>'
@@ -45,6 +43,7 @@ angular.module('myApp',['ngRoute'])
 		// })
 
 	})
+	// .controller('NewMealCtrl', function($scope, $rootScope, $location) {
 	.controller('NewMealCtrl', function($scope, $rootScope, $location) {
 		$scope.basePrice = 0;
 		$scope.taxRate = 0;
@@ -87,32 +86,53 @@ angular.module('myApp',['ngRoute'])
 				$rootScope.mealCount += 1;
 				$rootScope.tipTotal += $scope.tip;
 				$rootScope.basePrice = 0;
+				$rootScope.averageTip = $scope.tipTotal / $scope.mealCount;
 
-				$scope.banjo = 'twang';
-
+				// $rootScope.$broadcast("submit", aveTip, $scope.tipTotal, $scope.mealCount);
 				
 				$location.url('/my-earnings');
-
-				$rootScope.$broadcast('submit', $scope.banjo);
 			}
 		};
 
 	})
-	.controller('MyEarningsCtrl', function($scope, $rootScope, averageTip) {
-
+	// .controller('MyEarningsCtrl', function($scope, $rootScope, averageTip) {
+	.controller('MyEarningsCtrl', function($scope, $rootScope) {
 		$scope.reset = function() {
 			$rootScope.tipTotal = 0;
 			$rootScope.mealCount = 0;
 			$rootScope.averageTip = 0;
 		}
 
-		$scope.$on('submit', function(banjo) {
-			$scope.banjo = banjo;
-			console.log('on submit listener fired');
-			console.log($scope.banjo);
+		// $rootScope.$on("submit", function(event, aveTip, tipTotal, mealCount) {
+		// 	$rootScope.averageTip = aveTip;
+		// 	$rootScope.tipTotal = tipTotal;
+		// 	$rootScope.mealCount = mealCount;
+		// 	console.log('on submit listener fired');
+		// 	console.log($scope.averageTip);
 
-		});
+		// });
+
+		// $scope.$on("submit", function(event, aveTip) {
+		// 	$scope.averageTip = aveTip;
+		// 	console.log('on submit listener fired');
+		// 	console.log($scope.averageTip);
+
+		// });
 		
-		$rootScope.averageTip = averageTip;
+		// $rootScope.averageTip = averageTip;
 
 	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
