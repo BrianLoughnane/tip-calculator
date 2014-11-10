@@ -1,4 +1,4 @@
-angular.module('myApp',['ngRoute'])
+angular.module('myApp',['ngRoute', 'ngAnimate'])
 	.config(function($routeProvider) {
 		$routeProvider
 			.when('/', {
@@ -28,12 +28,11 @@ angular.module('myApp',['ngRoute'])
 				template: '<p>Sorry, page not found!</p>'
 			})
 	})
-	.run(function($rootScope) {
+	.run(function($rootScope, $location, $timeout) {
 
 		$rootScope.tipTotal = 0;
 		$rootScope.mealCount = 0;
 		$rootScope.averageTip = 0;
-
 
 		// $rootScope.$watch('tipTotal', function() {
 		// 	$rootScope.averageTip = $rootScope.tipTotal / $rootScope.mealCount;

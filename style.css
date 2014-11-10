@@ -1,4 +1,5 @@
-body {
+html, body {
+	min-height: 100%;
 	margin: 0px;
 }
 
@@ -119,3 +120,70 @@ div span {
 .myEarnings .detailsLeft {
 	width: 50%;
 }
+
+
+/*============================
+Animation
+============================*/
+
+.wrapper {
+	position: relative;
+
+}
+
+.container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	-webkit-transition: 1s all;
+	-o-transition: 1s all;
+	transition: 1s all;
+}
+
+.container.ng-enter {
+	transform: translateY(2000px);
+}
+
+.container.ng-enter-active {
+	transform: translateY(0px);
+}
+
+.container.ng-leave {
+	transform: translateY(0px);
+}
+
+.container.ng-leave-active {
+	transform: translateY(2000px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
