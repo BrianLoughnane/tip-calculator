@@ -1,0 +1,190 @@
+html, body {
+	min-height: 100%;
+	margin: 0px;
+	min-width: 1440px;
+}
+
+h1 {
+	text-align: center;
+	font-size: 60px;
+	margin: 0%;
+	padding: 1%;
+}
+
+nav {
+	text-align: center;
+	font-size: 1.6em;
+}
+
+h2 {
+	border-bottom: 1px solid black;
+	margin: 0px;
+	text-align: left;
+	padding: 15px;
+	font-size: 2.4em;
+}
+
+h1, h2 {
+	font-weight: normal;
+}
+
+input {
+	padding: 3%;
+}
+
+div span {
+	font-size: 1.2em;
+}
+
+.container {
+	padding-top: 20px;
+}
+
+.explanation {
+	width: 55%;
+	margin: auto;
+	font-size: 1.2em;
+}
+
+.left, .right	 {
+	width: 40%;
+	margin: auto;
+	border: 1px solid black;
+	/*margin-left: 10%;*/
+}
+
+.right>div {
+	border: 1px solid black;
+}
+
+.right>div:nth-child(2) {
+	margin-top: 50px;
+}
+
+.reset {
+	display: inline-block;
+	left: 45%;
+	top: 20px;
+}
+
+.button {
+	border: 1px solid black;
+	padding: 5px 21px;
+	box-shadow: 3px 3px;
+	position: relative;
+	font: 1.3em arial;
+}
+
+.button:hover {
+	cursor: pointer;
+}
+
+.mealDetailsButtons {
+	text-align: center;
+	padding: 10% 0%;
+	/*margin-top: 14%;*/
+}
+
+.mealDetailsButtons .button {
+	margin: 5px;
+	display: inline-block;
+	background: white;
+	font-size: 1.3em;
+	outline: none;
+}
+
+.innerMargin {
+	width: 50%;
+	margin: 5px;
+}
+
+.innerMargin>div:nth-child(2) {
+	border-bottom: 1px solid black;
+}
+
+.detailsLeft, .detailsRight {
+	display: inline-block;
+	margin: 0px;
+}
+
+.detailsLeft {
+	text-align: right;
+	width: 40%;
+	padding: 3%;
+}
+
+.detailsRight {
+	width: 53%;
+	text-align: center;
+}
+
+.myEarnings .detailsLeft {
+	width: 40%;
+}
+
+
+/*============================
+Animation
+============================*/
+
+.wrapper {
+	position: relative;
+
+}
+
+.container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	-webkit-transition: 1s all;
+	-o-transition: 1s all;
+	transition: 1s all;
+}
+
+.container.ng-enter {
+	transform: translateY(2000px);
+}
+
+.container.ng-enter-active {
+	transform: translateY(0px);
+}
+
+.container.ng-leave {
+	transform: translateY(0px);
+}
+
+.container.ng-leave-active {
+	transform: translateY(2000px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
