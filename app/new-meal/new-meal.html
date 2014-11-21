@@ -1,7 +1,7 @@
 <div class="left">
 	<h2>Enter the Meal Details</h2>
 
-	<form name='myForm' ng-submit="nm.submit()" novalidate>
+	<form name='nm.myForm' ng-submit="nm.submit()" novalidate>
 		<div><span class="detailsLeft">Base Meal Price: </span> <span class="detailsRight"> $ <input required type="number" min='1' ng-model="nm.basePrice"></span></div>
 		<div><span class="detailsLeft">Tax Rate:</span><span class="detailsRight"> % <input required type="number" ng-model="nm.taxRate"></span></div>
 		<div><span class="detailsLeft">Tip Percentage:</span><span class="detailsRight"> % <input required type="number" ng-model="nm.tipRate"></span></div>

@@ -1,51 +1,55 @@
 angular.module('tcApp')
-	.controller('NewMealCtrl', function($location, earnings) {
-		this.basePrice = 0;
-		this.taxRate = 0;
-		this.tipRate = 0;
+	.controller('NewMealCtrl', function($scope, $location, earnings) {
+		var nm = this;
 
-		this.subtotal = 0;
-		this.tip = 0;
-		this.total = 0;	
+		nm.meal = {
 
-		this.$watch('basePrice', function() {
-			this.taxRatePercentage = (this.taxRate / 100);
-			this.subtotal = this.basePrice + (this.basePrice * this.taxRatePercentage);
-			this.tipRatePercentage = this.tipRate/100;
-			this.tip = this.basePrice * this.tipRatePercentage;
-			this.total = this.subtotal + this.tip;
-		});
-
-		this.$watch('taxRate', function() {
-			this.taxRatePercentage = (this.taxRate / 100);
-			this.subtotal = this.basePrice + (this.basePrice * this.taxRatePercentage);
-			this.total = this.subtotal + this.tip;
-		});
-
-		this.$watch('tipRate', function() {
-			this.tipRatePercentage = this.tipRate/100;
-			this.tip = this.basePrice * this.tipRatePercentage;
-			this.total = this.subtotal + this.tip;
-		});
-
-		this.$watch('tipTotal', function() {
-			this.averageTip = this.tipTotal / this.mealCount;		
-		});
+		}
 		
-		this.$watch('mealCount', function() {
-			this.averageTip = this.tipTotal / this.mealCount;		
-		});
+		nm.basePrice = 0;
+		nm.taxRate = 0;
+		nm.tipRate = 0;
 
-		this.submit = function() {
-			if(this.myForm.$valid) {
+		nm.taxRatePercentage = (nm.taxRate / 100);
+		nm.tipRatePercentage = nm.tipRate/100;
+
+		nm.subtotal = 0;
+		nm.tip = 0;
+		nm.total = 0;	
+
+		nm.submit = function() {
+			if(nm.myForm.$valid) {
 				earnings.mealCount++;
-				earnings.tipTotal += this.tip;
+				earnings.tipTotal += nm.tip;
 				earnings.averageTip = earnings.tipTotal / earnings.mealCount;
-
-				this.basePrice = 0;
 
 				$location.url('/my-earnings');
 			}
 		};
+
+
+		$scope.$watch('nm.basePrice'
+			, function() {
+				
+				nm.subtotal = nm.basePrice + (nm.basePrice * nm.taxRatePercentage);
+				nm.tip = nm.basePrice * nm.tipRatePercentage;
+				nm.total = nm.subtotal + nm.tip;
+		});
+
+		$scope.$watch('nm.taxRate'
+			, function() {
+
+			nm.taxRatePercentage = (nm.taxRate / 100);
+			nm.subtotal = nm.basePrice + (nm.basePrice * nm.taxRatePercentage);
+			nm.total = nm.subtotal + nm.tip;
+		});
+
+		$scope.$watch('nm.tipRate'
+			, function() {
+
+			nm.tipRatePercentage = nm.tipRate/100;
+			nm.tip = nm.basePrice * nm.tipRatePercentage;
+			nm.total = nm.subtotal + nm.tip;
+		});
 
 	});

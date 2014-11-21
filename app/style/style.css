@@ -63,8 +63,14 @@ div span {
 
 .reset {
 	display: inline-block;
-	left: 45%;
+	left: 37%;
 	top: 20px;
+	margin: 0% 2%;
+}
+
+.reset a {
+	text-decoration: none;
+	color: inherit;
 }
 
 .button {
