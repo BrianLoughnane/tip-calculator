@@ -1,7 +1,5 @@
 angular.module('tcApp')
-
 	.factory('earnings', function() {
-		
 		var earnings = {
 			tipTotal: 0,
 			mealCount: 0,
@@ -12,7 +10,6 @@ angular.module('tcApp')
 				earnings.averageTip = 0;
 			}
 		}
-
 		return earnings;
 	});
 
