@@ -1,0 +1,1 @@
+angular.module("tcApp").factory("earnings",function(){var a={tipTotal:0,mealCount:0,averageTip:0,reset:function(){a.tipTotal=0,a.mealCount=0,a.averageTip=0}};return a});

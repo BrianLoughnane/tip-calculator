@@ -1,0 +1,1 @@
+angular.module("tcApp").controller("MyEarningsCtrl",["earnings",function(n){this.e=n}]);

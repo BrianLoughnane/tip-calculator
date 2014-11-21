@@ -1,0 +1,1 @@
+angular.module("tcApp").config(["$routeProvider",function(e){e.when("/",{templateUrl:"home/home.html"}).when("/new-meal",{templateUrl:"new-meal/new-meal.html",controller:"NewMealCtrl",controllerAs:"nm"}).when("/my-earnings",{templateUrl:"my-earnings/my-earnings.html",controller:"MyEarningsCtrl",controllerAs:"c"}).otherwise({template:"<p>Sorry, page not found!</p>"})}]);
